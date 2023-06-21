@@ -71,6 +71,4 @@ Contributions are welcome. Please make sure to update tests as appropriate.
 
 This project is licensed under the ISC License.
 
-## Disclaimer
 
-This is a basic project structure inferred from the available code. The actual functionality and purpose of the project may differ. Please contact the original authors for more accurate information.
