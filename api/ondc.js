@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import { createAuthorizationHeader } from "../utils/cryptic.js";
 import "dotenv/config";
 
-const BASE_URL = "https://pilot-gateway-1.beckn.nsdl.co.in";
 
 const router = Router();
 
@@ -33,7 +32,7 @@ async function callApi(reqObj) {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: BASE_URL + "/search",
+      url: process.env.ONDC_BASE_URL + "/search",
       headers: {
         Authorization: header,
         "Content-Type": "application/json",
@@ -42,7 +41,7 @@ async function callApi(reqObj) {
     };
 
     let response = await axios(config);
-    return { result: response.data, header };
+    return { reqBody ,result: response.data, header };
   } catch (e) {
     console.log(e);
     return e;
